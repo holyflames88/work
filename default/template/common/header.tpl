@@ -17,24 +17,24 @@
 <?php if ($keywords) { ?>
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
-<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js?v11" type="text/javascript"></script>
-<link href="catalog/view/theme/default/css/bootstrap.min.css?v11" rel="stylesheet">
-<link href="catalog/view/theme/default/css/bootstrap-theme.min.css?v11" rel="stylesheet">
-<link href="catalog/view/theme/default/css/style.css?v11" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="catalog/view/theme/default/js/bootstrap.min.js?v11"></script>
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js?v112" type="text/javascript"></script>
+<link href="catalog/view/theme/default/css/bootstrap.min.css?v112" rel="stylesheet">
+<link href="catalog/view/theme/default/css/bootstrap-theme.min.css?v112" rel="stylesheet">
+<link href="catalog/view/theme/default/css/style.css?v112" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-latest.js?v112"></script>
+<script src="catalog/view/theme/default/js/bootstrap.min.js?v112"></script>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
 <?php foreach ($styles as $style) { ?>
-<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
+<link href="<?php echo $style['href']; ?>?v112" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
-<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js?v112" type="text/javascript"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
 <?php foreach ($scripts as $script) { ?>
-<script src="<?php echo $script; ?>" type="text/javascript"></script>
+<script src="<?php echo $script; ?>?v112" type="text/javascript"></script>
 <?php } ?>
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
@@ -56,7 +56,7 @@
                 <div class="h-info-icon fll"></div>
                 <div class="h-info-txt">
                     <div class="h-info-tel">8-800-534-65-32</div>
-                    <a href="#" class="feedback-link">Заказать обратный звонок</a>
+                    <a href="#data1" class="feedback-link">Заказать обратный звонок</a>
                 </div>
             </div>
             <div class="h-info fll">

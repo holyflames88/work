@@ -1,3 +1,14 @@
+<div class="content-block flr">
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">Новые товары</a></li>
+            <li role="presentation"><a href="#action" aria-controls="action" role="tab" data-toggle="tab">Акции</a></li>
+            <li role="presentation"><a href="#sell" aria-controls="sell" role="tab" data-toggle="tab">Распродажа</a></li>
+            <li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">Популярные</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="new">
+<!-- --->
 <div class="content-catalog-line">
   <?php foreach ($products as $product) { ?>
   <div class="content-catalog-item fll">
@@ -11,5 +22,21 @@
   </div>
   <?php } ?>
 </div>
+<!-- --->
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="action">
+                Вторая вкладка
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="sell">
+                Третья вкладка
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="popular">
+                Четвертая вкладка
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
 
 
