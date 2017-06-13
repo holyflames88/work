@@ -31,81 +31,68 @@
             </div>
         <?php } ?>
       <h1><?php echo $heading_title; ?></h1>
-        <!--
-        <ul class="breadcrumb">
-            <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-                <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-            <?php } ?>
-        </ul>
-        -->
-
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <td class="text-center"><?php echo $column_image; ?></td>
-                <td class="text-left"><?php echo $column_name; ?></td>
-                <td class="text-left"><?php echo $column_model; ?></td>
-                <td class="text-left"><?php echo $column_quantity; ?></td>
-                <td class="text-right"><?php echo $column_price; ?></td>
-                <td class="text-right"><?php echo $column_total; ?></td>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($products as $product) { ?>
-              <tr>
-                <td class="text-center"><?php if ($product['thumb']) { ?>
-                  <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
-                  <?php } ?></td>
-                <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-                  <?php if (!$product['stock']) { ?>
-                  <span class="text-danger">***</span>
-                  <?php } ?>
-                  <?php if ($product['option']) { ?>
-                  <?php foreach ($product['option'] as $option) { ?>
-                  <br />
-                  <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
-                  <?php } ?>
-                  <?php } ?>
-                  <?php if ($product['reward']) { ?>
-                  <br />
-                  <small><?php echo $product['reward']; ?></small>
-                  <?php } ?>
-                  <?php if ($product['recurring']) { ?>
-                  <br />
-                  <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
-                  <?php } ?></td>
-                <td class="text-left"><?php echo $product['model']; ?></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
-                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
-                    <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button>
-                    </span></div></td>
-                <td class="text-right"><?php echo $product['price']; ?></td>
-                <td class="text-right"><?php echo $product['total']; ?></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+        <?php foreach ($products as $product) { ?>
+        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+        <div class="cart-cont">
+            <div class="cart-cont-line">
+                <?php if ($product['thumb']) { ?>
+                <div class="cart-cont-l-img fll">
+                    <img src="<?php echo $product['thumb']; ?>" alt="">
+                </div>
+                <?php } ?>
+                <div class="cart-cont-l-title fll">
+                    <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                </div>
+                <div class="cart-price fll"><?php echo $product['price']; ?><span></span></div>
+                <div class="numbers-row fll">
+                    <input type="text" name="french-hens3[<?php echo $product['cart_id']; ?>]" id="french-hens3" value="<?php echo $product['quantity']; ?>" class="numbers-row-input">
+                </div>
+                <div class="cart-price fll">=&nbsp;&nbsp;&nbsp;<?php echo $product['total']; ?><span></span></div>
+                <a href="#" class="cart-delete flr" data-toggle="tooltip" title="<?php echo $button_remove; ?>" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"></a>
+                <div class="clearfix"></div>
+            </div>
         </div>
-      </form>
-      <?php if ($modules) { ?>
-      <h2><?php echo $text_next; ?></h2>
-      <p><?php echo $text_next_choice; ?></p>
-      <div class="panel-group" id="accordion">
-        <?php foreach ($modules as $module) { ?>
-        <?php echo $module; ?>
-        <?php } ?>
-      </div>
-      <?php } ?>
+            <?php } ?>
+        <div class="product-style-block">
+            <div class="product-style-block-title">Оформление заказа</div>
+            <div class="product-style-block-cont">
+                <div class="order-left fll">
+                    <div class="order-left-title">Как покупать у нас в магазине</div>
+                    <div class="order-left-descr">
+                        негативно отразилась на николаевском плавбассейне «Водолей», который, кроме развлекательного и оздоровительного комплекса, также является площадкой для тренировок олимпийцев.
+                        Уже восемь масштабных соревнований были отменены с начала года, резко упала посещаемость – «Водолей» стоит перед угрозой закрытия прыжкового и спортивного блока из-за трудностей с оплатой электроэнергии и отопления. Руководство бассейна бьет в набат – приглашает всех провести время в своих стенах, ведь каждое посещение – это спасательный круг спортивного комплекса.
+                        - Если мы отключаемся – по любому поводу, либо из-за
+                    </div>
+                </div>
+                <div class="order-right flr">
+
+                        <input type="text" class="order-input" placeholder="Имя">
+                        <input type="text" class="order-input" placeholder="Номер телефона">
+                        <input type="text" class="order-input" placeholder="Email">
+                        <textarea class="order-textarea" placeholder="Адрес доставки"></textarea>
+                        <button id="buy" type="sumbit" class="btn btn-order flr"><?php echo $button_checkout; ?></button>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        </form>
+
+
+
       <br />
-      <div class="buttons clearfix">
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
-      </div>
         <br />
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script type="text/javascript">
+    <!--
+    $('#buy').on('click', function(e) {
+        e.preventDefault();
+        window.location.href = '<?php echo $checkout; ?>';
+    });
+    //-->
+</script>
 <?php echo $footer; ?>
+
